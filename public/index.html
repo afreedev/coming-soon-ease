@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coming Soon - Ethiopian Association for Startup Ecosystem</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="min-h-screen flex items-center justify-center bg-black">
+    <div class="wrapper relative w-full h-full">
+        <div id="particles-js"></div>
+        <canvas id="constellation" class="absolute w-full h-full"></canvas>
+
+        <div class="content-container">
+            <img src="EASE-logo-trans.png" alt="EASE Logo" class="ease-logo mb-4 w-64 md:w-auto">
+            <h1 class="text-3xl font-bold mb-4 text-center amber-text">Coming Soon:</br> Ethiopian Association for
+                Startup Ecosystem</h1>
+            <p class="mb-4 text-white">We are currently working on an amazing website for the Ethiopian Association for
+                Startup Ecosystem. Stay tuned for updates and exciting news!</p>
+            <form id="subscribe-form" class="flex flex-col space-y-4" action="form-handler.php" method="post">
+                <div class="flex flex-col space-y-1">
+                    <label for="name" class="amber-text">Name</label>
+                    <input type="text" id="name" name="name"
+                        class="border-2 border-gray-300 rounded-md p-2 focus:border-blue-400">
+                </div>
+                <div class="flex flex-col space-y-1">
+                    <label for="email" class="amber-text">Email</label>
+                    <input type="email" id="email" name="email"
+                        class="border-2 border-gray-300 rounded-md p-2 focus:border-blue-400">
+                </div>
+                <div class="mb-4">
+                    <label for="stakeholder" class="block mb-2 amber-text">Ecosystem Role</label>
+                    <select id="stakeholder" name="stakeholder" class="w-full p-2 border border-gray-300 rounded">
+                        <option value="investor">Investor</option>
+                        <option value="incubator">Incubator</option>
+                        <option value="accelerator">Accelerator</option>
+                        <option value="startup">Startup</option>
+                        <option value="mentor">Mentor</option>
+                        <option value="other">Other</option>
+                        <!-- Add more options if needed -->
+                    </select>
+                </div>
+                <button type="submit" class="bg-blue-500 text-white p-2 rounded-md hover:bg-blue-600">Stay
+                    Informed</button>
+            </form>
+        </div>
+    </div>
+    <script src="particles.min.js"></script>
+    <script src="script.mjs"></script>
+</body>
+
+</html>
