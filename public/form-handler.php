@@ -1,39 +1,39 @@
 <?php
+require 'vendor/autoload.php';
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $name = trim($_POST["name"]);
-    $email = trim($_POST["email"]);
-    $stakeholder = trim($_POST["stakeholder"]);
+$name = $_POST['name'];
+$email = $_POST['email'];
+$stakeholder = $_POST['stakeholder'];
 
-    // Perform validation
-    if (empty($name) || empty($email) || empty($stakeholder)) {
-        die("Error: All fields are required.");
-    }
+$mail = new PHPMailer(true);
 
-    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        die("Error: Invalid email address.");
-    }
+try {
+    //Server settings
+    $mail->SMTPDebug = 0; // Enable verbose debug output. Set to 0 for no output
+    $mail->isSMTP(); // Set mailer to use SMTP
+    $mail->Host = 'mail.ease.et'; // Specify your SMTP server
+    $mail->SMTPAuth = true; // Enable SMTP authentication
+    $mail->Username = 'cees.wanrooij@ease.et'; // SMTP username
+    $mail->Password = 'F3Mt@wFmvv=w'; // SMTP password
+    $mail->SMTPSecure = 'ssl'; // Enable TLS encryption, or 'ssl' for SSL
+    $mail->Port = 465; // TCP port to connect to
 
-    // Sanitize input
-    $name = filter_var($name, FILTER_SANITIZE_STRING);
-    $email = filter_var($email, FILTER_SANITIZE_EMAIL);
-    $stakeholder = filter_var($stakeholder, FILTER_SANITIZE_STRING);
+    //Recipients
+    $mail->setFrom('cees.wanrooij@ease.et', 'Cees');
+    $mail->addAddress('cees.wanrooij@ease.et', 'Cees'); // Add a recipient
 
-    // Process the form data (e.g. send an email)
-    $to = "cees.wanrooij@ease.et";
-    $subject = "New subscriber from EASE coming soon page";
-    $message = "Name: {$name}\nEmail: {$email}\nStakeholder: {$stakeholder}";
-    $headers = "From: no-reply@ease.et";
+    // Content
+    $mail->isHTML(true); // Set email format to HTML
+    $mail->Subject = 'New Subscription from EASE Coming Soon Page';
+    $mail->Body    = "Name: {$name}<br>Email: {$email}<br>Ecosystem Role: {$stakeholder}";
 
-    if (mail($to, $subject, $message, $headers)) {
-        header("Location: success.html");
-        exit;
-    } else {
-        die("Error: Failed to send email.");
-    }
-} else {
-    header("Location: index.html");
+    $mail->send();
+    header('Location: success.html');
     exit;
+} catch (Exception $e) {
+    // Handle errors here, e.g., by showing an error message or logging the error
+    echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
 }
-
 ?>
