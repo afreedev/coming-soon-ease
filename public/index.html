@@ -40,32 +40,43 @@
                 Startup Ecosystem</h1>
             <p class="mb-4 text-white">We are currently working on an amazing website for the Ethiopian Association for
                 Startup Ecosystem. Stay tuned for updates and exciting news!</p>
-            <form id="subscribe-form" class="flex flex-col space-y-4" action="form-handler.php" method="post">
-                <div class="flex flex-col space-y-1">
-                    <label for="name" class="amber-text">Name</label>
-                    <input type="text" id="name" name="name"
-                        class="border-2 border-gray-300 rounded-md p-2 focus:border-blue-400">
-                </div>
-                <div class="flex flex-col space-y-1">
-                    <label for="email" class="amber-text">Email</label>
-                    <input type="email" id="email" name="email"
-                        class="border-2 border-gray-300 rounded-md p-2 focus:border-blue-400">
-                </div>
-                <div class="mb-4">
-                    <label for="stakeholder" class="block mb-2 amber-text">Ecosystem Role</label>
-                    <select id="stakeholder" name="stakeholder" class="w-full p-2 border border-gray-300 rounded">
-                        <option value="investor">Investor</option>
-                        <option value="incubator">Incubator</option>
-                        <option value="accelerator">Accelerator</option>
-                        <option value="startup">Startup</option>
-                        <option value="mentor">Mentor</option>
-                        <option value="other">Other</option>
-                        <!-- Add more options if needed -->
-                    </select>
-                </div>
-                <button type="submit" class="custom-btn text-white p-2 rounded-md">Stay
-                    Informed</button>
-            </form>
+<form id="subscribe-form" class="flex flex-col space-y-4" action="form-handler.php" method="post">
+    <div class="flex flex-col space-y-1">
+        <label for="name" class="amber-text">Name</label>
+        <input type="text" id="name" name="name"
+            class="border-2 border-gray-300 rounded-md p-2 focus:border-blue-400">
+    </div>
+    <div class="flex flex-col space-y-1">
+        <label for="company" class="amber-text">Company</label>
+        <input type="text" id="company" name="company"
+            class="border-2 border-gray-300 rounded-md p-2 focus:border-blue-400">
+    </div>
+    <div class="flex flex-col space-y-1">
+        <label for="email" class="amber-text">Email</label>
+        <input type="email" id="email" name="email"
+            class="border-2 border-gray-300 rounded-md p-2 focus:border-blue-400">
+    </div>
+    <div class="mb-4">
+        <label for="stakeholder" class="block mb-2 amber-text">Ecosystem Role</label>
+        <select id="stakeholder" name="stakeholder" class="w-full p-2 border border-gray-300 rounded">
+            <option value="investor">Investor</option>
+            <option value="incubator">Incubator</option>
+            <option value="accelerator">Accelerator</option>
+            <option value="startup">Startup</option>
+            <option value="mentor">Mentor</option>
+            <option value="other">Other</option>
+            <!-- Add more options if needed -->
+        </select>
+    </div>
+    <div class="flex flex-col space-y-1">
+        <label for="country" class="amber-text">Country</label>
+        <input type="text" id="country" name="country"
+            class="border-2 border-gray-300 rounded-md p-2 focus:border-blue-400">
+    </div>
+    <button type="submit" class="custom-btn text-white p-2 rounded-md">Stay
+        Informed</button>
+</form>
+
         </div>
     </div>
     <script src="particles.min.js"></script>

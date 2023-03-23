@@ -4,8 +4,10 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
 $name = $_POST['name'];
+$company = $_POST['company'];
 $email = $_POST['email'];
 $stakeholder = $_POST['stakeholder'];
+$country = $_POST['country'];
 
 $mail = new PHPMailer(true);
 
@@ -26,8 +28,8 @@ try {
 
     // Content
     $mail->isHTML(true); // Set email format to HTML
-    $mail->Subject = 'New Subscription from EASE Coming Soon Page';
-    $mail->Body    = "Name: {$name}<br>Email: {$email}<br>Ecosystem Role: {$stakeholder}";
+$mail->Subject = 'New Subscription from EASE Coming Soon Page';
+$mail->Body    = "Name: {$name}<br>Company: {$company}<br>Email: {$email}<br>Ecosystem Role: {$stakeholder}<br>Country: {$country}";
 
     $mail->send();
     header('Location: success.html');
