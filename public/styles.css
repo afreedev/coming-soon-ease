@@ -635,7 +635,12 @@ video {
 }
 
 body {
-  overflow: hidden;
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: auto;
 }
 
 .ease-logo {
@@ -660,16 +665,25 @@ body {
 }
 
 button[type="submit"] {
-  background-color: #D8B906;
+  background-color: #d8b906;
   transition: background-color 0.3s ease;
 }
 
 button[type="submit"]:hover {
-  background-color: #C4A006;
+  background-color: #c4a006;
 }
 
 .amber-text {
   color: rgba(216, 185, 6, 1);
+}
+
+#particles-js {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
 }
 
 .hover\:bg-blue-600:hover {
